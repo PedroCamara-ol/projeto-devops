@@ -15,6 +15,14 @@ app.config['MONGODB_SETTINGS'] = {
 }
 
 
+class UserModel(db.Document):
+    cpf = db.StringField(required=True, unique=True)
+    first_name = db.StringField(required=True)
+    last_name = db.StringField(required=True)
+    email = db.EmailField(required=True)
+    birth_date = db.DateTimeField(required=True)
+
+
 class Users(Resource):
     def get(self):
         return {"massage": "user 1"}
