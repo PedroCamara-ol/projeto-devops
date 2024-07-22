@@ -1,4 +1,5 @@
 import os
+from mongomock import MongoClient
 
 
 class DevConfig():
@@ -13,5 +14,5 @@ class DevConfig():
 class MockConfig:
     MONGODB_SETTINGS = {
         'db': 'users',
-        'host': 'mongomock://localhost'
+        'mongo_client_class': MongoClient
     }
