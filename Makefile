@@ -7,3 +7,7 @@ test:
 compose:
 	@docker-compose build
 	@docker-compose up
+
+heroku:
+	@heroku container:push -a projeto-devops web
+	@heroku container:release -a projeto-devops web
